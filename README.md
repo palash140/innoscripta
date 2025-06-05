@@ -16,8 +16,8 @@ A complete Laravel application with Docker environment ready to run with just a 
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/palash140/innoscripta.git
+cd innoscripta
 ```
 
 ### Step 2: Setup Environment File
