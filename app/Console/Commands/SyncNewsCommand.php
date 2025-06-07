@@ -171,7 +171,8 @@ class SyncNewsCommand extends Command
                     SyncNewsJob::dispatchSync($newsItems, $providerName, $page, $syncSessionId);
                 } else {
                     // $syncJob->dispatch();
-                    SyncNewsJob::dispatch($newsItems, $providerName, $page, $syncSessionId);
+                    SyncNewsJob::dispatch($newsItems, $providerName, $page, $syncSessionId)
+                    ->onQueue('sync_news');
                     $this->line("  📤 Dispatched sync job to queue");
                 }
 

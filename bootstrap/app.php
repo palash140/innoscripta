@@ -27,20 +27,20 @@ return Application::configure(basePath: dirname(__DIR__))
         //          ->emailOutputOnFailure(config('app.admin_email'))
         //          ->appendOutputTo(storage_path('logs/news-sync.log'));
 
-        // // Staggered provider syncs for redundancy
-        // $schedule->command('news:sync --provider=newsapi --yesterday --records=50')
-        //          ->dailyAt('02:15')
-        //          ->withoutOverlapping();
+        // Staggered provider syncs for redundancy
+        $schedule->command('news:sync --provider=newsapi --yesterday --records=50')
+                 ->dailyAt('02:15')
+                 ->withoutOverlapping();
 
-        // $schedule->command('news:sync --provider=guardian --yesterday --records=50')
-        //          ->dailyAt('02:30')
-        //          ->withoutOverlapping();
+        $schedule->command('news:sync --provider=guardian --yesterday --records=50')
+                 ->dailyAt('02:30')
+                 ->withoutOverlapping();
 
-        // $schedule->command('news:sync --provider=nytimes --yesterday --records=50')
-        //          ->dailyAt('02:45')
-        //          ->withoutOverlapping();
+        $schedule->command('news:sync --provider=nytimes --yesterday --records=50')
+                 ->dailyAt('02:45')
+                 ->withoutOverlapping();
 
-        // // Hourly smaller syncs during business hours
+        // Hourly smaller syncs during business hours
         // $schedule->command('news:sync --records=20 --per-page=5')
         //          ->hourlyAt(15) // Every hour at 15 minutes past
         //          ->between('09:00', '18:00')
@@ -56,6 +56,8 @@ return Application::configure(basePath: dirname(__DIR__))
         // $schedule->call(function () {
         //     \Illuminate\Support\Facades\Cache::tags(['sync_status'])->flush();
         // })->weekly();
+
+
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
