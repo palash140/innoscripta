@@ -150,7 +150,10 @@ class NewsAPITransformer
         if (!$author) {
             return null;
         }
-        return preg_replace('/\s*\([^)]*@[^)]*\)/', '', $author);
+        $author = preg_replace('/\s*\([^)]*@[^)]*\)/', '', $author);
+        $author = \explode(',', $author)[0]; // special forbes case
+        return $author;
+
     }
 
     private function parseDate(?string $date): ?\DateTime

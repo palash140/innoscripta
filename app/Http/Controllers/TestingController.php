@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class TestingController extends Controller
 {
-    public function index(NYTimesProvider $newsapi)
+    public function index(NewsAPIProvider $newsapi)
     {
         return $newsapi->fetchNews();
         // return config('news_providers.newsapi.key');
@@ -19,6 +19,9 @@ class TestingController extends Controller
 
 /*
 Usage Examples:
+
+docker-compose exec php php artisan news:sync --from=2025-06-01 --to=2025-06-07 --provider=nytimes  --immediate  --records=50
+
 
 # Seed categories (proper Laravel way)
 php artisan db:seed --class=NewsCategorySeeder
