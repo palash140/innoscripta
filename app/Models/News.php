@@ -39,6 +39,22 @@ class News extends Model
         return $query->where('news_category_id', $categoryId);
     }
 
+    /**
+     * Full-text search using MySQL MATCH AGAINST
+     * Assumes you have a FULLTEXT index on title, description fields
+     */
+    public function scopeFullTextSearch(Builder $query, $search)
+    {
+        if (empty($search)) {
+            return $query;
+        }
+
+        return $query->whereRaw(
+            "MATCH(title, description) AGAINST(? IN NATURAL LANGUAGE MODE)",
+            [$search]
+        );
+    }
+
     public function scopeByCategorySlug(Builder $query, string $slug): Builder
     {
         return $query->whereHas('category', fn ($q) => $q->where('slug', $slug));

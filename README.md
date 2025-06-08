@@ -44,6 +44,8 @@ docker-compose exec php php artisan migrate
 docker-compose exec php php artisan db:seed
 
 #intial seed
+docker-compose exec php php artisan news:sync --from=2025-06-01 --to=2025-06-07  --records=50 --immediate
+
 ```
 
 **That's it! 🎉**
