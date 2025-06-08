@@ -15,9 +15,9 @@ class UserPrefrenceResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'category' => new NewsCategoryResource($this->category),
-            'source' => new NewsSourceResource($this->source),
-            'author' => new NewsAuthorResource($this->author)
+         'category' => $this->category ? new NewsCategoryResource($this->category) : null,
+         'source' => $this->source ? new NewsSourceResource($this->source) : null,
+         'author' => $this->author ? new NewsAuthorResource($this->author) : null,
         ];
     }
 }

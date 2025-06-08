@@ -43,14 +43,65 @@ docker-compose exec php composer install
 docker-compose exec php php artisan migrate
 docker-compose exec php php artisan db:seed
 
-#intial seed
-docker-compose exec php php artisan news:sync --from=2025-06-01 --to=2025-06-07  --records=50 --immediate
-
+# Initial seed
+docker-compose exec php php artisan news:sync --from=2025-06-01 --to=2025-06-07 --records=50 --immediate
 ```
 
 **That's it! 🎉**
 
 Your Laravel application is now running at: **http://localhost:8080**
+
+---
+
+## 🔧 API Testing Setup
+
+### Step 1: Import Postman Collection
+
+1. Open Postman
+2. Import the provided Postman collection file
+3. Set up environment variable:
+    - **Variable name**: `url`
+    - **Value**: `http://localhost:8080`
+
+### Step 2: Authentication Flow
+
+1. **Register a new user** using the register endpoint
+    - On success, it will generate an authentication token
+2. **Copy the token** from the response
+3. **Set up Bearer Token** authentication:
+    - Go to Authorization tab in Postman
+    - Select "Bearer Token" type
+    - Paste the token in the Token field
+
+### Step 3: Token Management
+
+-   **Reset Password**: Use the reset password API with your current token
+-   **Generate New Token**: Use the login API to get a fresh token
+-   **Logout**: Use the logout API to disable the current token
+
+### Step 4: News API Usage
+
+#### News Endpoints
+
+-   **Fetch News**: Access the news section to get both personalized and custom news
+-   **Filter Options**: Use category, author, and source filters
+-   **Date Range**: Default is one month, but can be customized
+-   **Personalized News**: Set `personalized=true` flag to use user preferences
+
+#### User Preferences
+
+-   **Update Preferences**: API to create/update user preferences for category, author, and source
+-   **Fetch Preferences**: API to retrieve current user preferences
+-   **Apply Preferences**: Use the `personalized` flag in news API to apply saved preferences automatically
+
+#### Example API Flow
+
+1. Register → Get token
+2. Set bearer token in Postman
+3. Fetch categories, authors, sources for filter options
+4. Update user preferences with preferred category/author/source
+5. Fetch personalized news using `personalized=true` flag
+6. Or fetch custom news with manual filters
 
 ---
 

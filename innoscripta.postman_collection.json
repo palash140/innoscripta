@@ -1,0 +1,685 @@
+{
+	"info": {
+		"_postman_id": "61d8904c-407f-4f24-9b88-cde954d11def",
+		"name": "innoscripta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2832829"
+	},
+	"item": [
+		{
+			"name": "News data source APIs",
+			"item": [
+				{
+					"name": "NEWSAPI",
+					"item": [
+						{
+							"name": "Get News",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://newsapi.org/v2/everything?apiKey=66a943bfadd84d958413023f39c8cab1&language=en&from=2025-06-06 00:00:00&to=2025-06-06 23:59:59&domains=forbes.com&page=1&pageSize=10",
+									"protocol": "https",
+									"host": [
+										"newsapi",
+										"org"
+									],
+									"path": [
+										"v2",
+										"everything"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "bitcoin",
+											"disabled": true
+										},
+										{
+											"key": "apiKey",
+											"value": "66a943bfadd84d958413023f39c8cab1"
+										},
+										{
+											"key": "language",
+											"value": "en"
+										},
+										{
+											"key": "from",
+											"value": "2025-06-06 00:00:00"
+										},
+										{
+											"key": "to",
+											"value": "2025-06-06 23:59:59"
+										},
+										{
+											"key": "domains",
+											"value": "forbes.com"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Sources",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://newsapi.org/v2/top-headlines/sources?apiKey=66a943bfadd84d958413023f39c8cab1",
+									"protocol": "https",
+									"host": [
+										"newsapi",
+										"org"
+									],
+									"path": [
+										"v2",
+										"top-headlines",
+										"sources"
+									],
+									"query": [
+										{
+											"key": "apiKey",
+											"value": "66a943bfadd84d958413023f39c8cab1"
+										},
+										{
+											"key": "language",
+											"value": "en",
+											"disabled": true
+										},
+										{
+											"key": "pageSize",
+											"value": "100",
+											"disabled": true
+										},
+										{
+											"key": "from",
+											"value": "2025-06-04",
+											"disabled": true
+										},
+										{
+											"key": "to",
+											"value": "2025-06-05",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "The Guardian",
+					"item": [
+						{
+							"name": "get contents",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://content.guardianapis.com/search?page=2&api-key=9e411556-c71a-4d38-b35c-7f54487dfe8d&from-date=2025-06-04T00:00:00&to-date=2025-06-04T23:59:59&page-size=10",
+									"protocol": "https",
+									"host": [
+										"content",
+										"guardianapis",
+										"com"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2"
+										},
+										{
+											"key": "q",
+											"value": "debate",
+											"disabled": true
+										},
+										{
+											"key": "api-key",
+											"value": "9e411556-c71a-4d38-b35c-7f54487dfe8d"
+										},
+										{
+											"key": "from-date",
+											"value": "2025-06-04T00:00:00"
+										},
+										{
+											"key": "format of datae",
+											"value": "2025-06-04T23:59:59\n",
+											"disabled": true
+										},
+										{
+											"key": "to-date",
+											"value": "2025-06-04T23:59:59"
+										},
+										{
+											"key": "page-size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "sections",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://content.guardianapis.com/sections?page=2&api-key=9e411556-c71a-4d38-b35c-7f54487dfe8d&format=json",
+									"protocol": "https",
+									"host": [
+										"content",
+										"guardianapis",
+										"com"
+									],
+									"path": [
+										"sections"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2"
+										},
+										{
+											"key": "q",
+											"value": "debate",
+											"disabled": true
+										},
+										{
+											"key": "api-key",
+											"value": "9e411556-c71a-4d38-b35c-7f54487dfe8d"
+										},
+										{
+											"key": "from-date",
+											"value": "2025-06-04",
+											"disabled": true
+										},
+										{
+											"key": "to-date",
+											"value": "2025-06-04",
+											"disabled": true
+										},
+										{
+											"key": "format",
+											"value": "json"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "NEW York  Times",
+					"item": [
+						{
+							"name": "Get Articles",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=DCSvXc1OWvGJPj2W0lDBM5YjURKU0zxA&begin_date=20250604&end_date=20250605&page=1",
+									"protocol": "https",
+									"host": [
+										"api",
+										"nytimes",
+										"com"
+									],
+									"path": [
+										"svc",
+										"search",
+										"v2",
+										"articlesearch.json"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "election",
+											"disabled": true
+										},
+										{
+											"key": "api-key",
+											"value": "DCSvXc1OWvGJPj2W0lDBM5YjURKU0zxA"
+										},
+										{
+											"key": "begin_date",
+											"value": "20250604"
+										},
+										{
+											"key": "end_date",
+											"value": "20250605"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "News",
+			"item": [
+				{
+					"name": "Fetch News",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|cUyuMScLzwDYmpZHI2sPLt8y5p0JHmIyvnI7fWqM6bb6dc2d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/news?category_id=1&author_id=32&source_id=7&from=2025-01-01&to=2025-06-08&personalized=true",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"news"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "per_page",
+									"value": "50",
+									"disabled": true
+								},
+								{
+									"key": "category_id",
+									"value": "1"
+								},
+								{
+									"key": "author_id",
+									"value": "32"
+								},
+								{
+									"key": "source_id",
+									"value": "7"
+								},
+								{
+									"key": "keyword",
+									"value": "trump",
+									"disabled": true
+								},
+								{
+									"key": "from",
+									"value": "2025-01-01"
+								},
+								{
+									"key": "to",
+									"value": "2025-06-08"
+								},
+								{
+									"key": "personalized",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "News Categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|cUyuMScLzwDYmpZHI2sPLt8y5p0JHmIyvnI7fWqM6bb6dc2d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/news/categories",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"news",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "News Authors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|cUyuMScLzwDYmpZHI2sPLt8y5p0JHmIyvnI7fWqM6bb6dc2d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/news/authors",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"news",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "News Sources",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|cUyuMScLzwDYmpZHI2sPLt8y5p0JHmIyvnI7fWqM6bb6dc2d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/news/sources",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"news",
+								"sources"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Prefrence",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|cUyuMScLzwDYmpZHI2sPLt8y5p0JHmIyvnI7fWqM6bb6dc2d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/user/prefrence",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"user",
+								"prefrence"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store Uesr Prefrence",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|cUyuMScLzwDYmpZHI2sPLt8y5p0JHmIyvnI7fWqM6bb6dc2d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"category_id\":1,\n    \"source_id\":7,\n    \"author_id\":32\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/user/prefrence",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"user",
+								"prefrence"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Palash Chandel\",\n    \"email\":\"palash.chandel@gmail.com\",\n    \"password\":\"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/register",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n    \"email\":\"palash.chandel@gmail.com\",\n    \"password\":\"123456789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/login",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "13|zB8SvoQKxCwf6J3vHgaIeziW5os37lDbeWGp9AS50eb75a3e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}api/user",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|2YMhKgqhXpQNeNBUUegBTI93Qjporsor2Xjtjgb3fa9ae75c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"password\":\"123456789\",\n    \"password_confirmation\":\"123456789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/reset-password",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"reset-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "12|CBcpNEKMtNbCdigdUomHCx7NVpyPgiyZB4EuBPSr3dffb753",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}api/logout",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

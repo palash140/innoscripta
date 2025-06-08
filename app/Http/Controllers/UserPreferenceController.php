@@ -9,7 +9,15 @@ class UserPreferenceController extends Controller
 {
     public function show(Request $request)
     {
-        return new UserPrefrenceResource($request->user()->preference);
+        $preference = $request->user()?->preference;
+
+        if(empty($preference)) {
+            return [
+                'data' => []
+            ];
+        };
+
+        return new UserPrefrenceResource($preference);
     }
 
     public function store(Request $request)
