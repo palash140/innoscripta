@@ -88,7 +88,10 @@ return new class () extends Migration {
             $table->index('published_at');
         });
 
-        DB::statement('ALTER TABLE news ADD FULLTEXT search_index (title, description)');
+        // DB::statement('ALTER TABLE news ADD FULLTEXT search_index (title, description)');
+        if (config('database.default') !== 'sqlite') {
+            DB::statement('ALTER TABLE news ADD FULLTEXT search_index (title, description)');
+        }
 
     }
 

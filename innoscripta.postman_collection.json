@@ -286,15 +286,21 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "2|cUyuMScLzwDYmpZHI2sPLt8y5p0JHmIyvnI7fWqM6bb6dc2d",
+									"value": "1|reVQgFDRx0ykNmyERyhS0h9Qc9sHMRkNQ8xn9h9b9f0bd327",
 									"type": "string"
 								}
 							]
 						},
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "{{url}}api/news?category_id=1&author_id=32&source_id=7&from=2025-01-01&to=2025-06-08&personalized=true",
+							"raw": "{{url}}api/news",
 							"host": [
 								"{{url}}api"
 							],
@@ -314,15 +320,18 @@
 								},
 								{
 									"key": "category_id",
-									"value": "1"
+									"value": "1",
+									"disabled": true
 								},
 								{
 									"key": "author_id",
-									"value": "32"
+									"value": "32",
+									"disabled": true
 								},
 								{
 									"key": "source_id",
-									"value": "7"
+									"value": "7",
+									"disabled": true
 								},
 								{
 									"key": "keyword",
@@ -331,15 +340,18 @@
 								},
 								{
 									"key": "from",
-									"value": "2025-01-01"
+									"value": "2025-01-01",
+									"disabled": true
 								},
 								{
 									"key": "to",
-									"value": "2025-06-08"
+									"value": "2025-06-08",
+									"disabled": true
 								},
 								{
 									"key": "personalized",
-									"value": "true"
+									"value": "true",
+									"disabled": true
 								}
 							]
 						}
@@ -354,13 +366,19 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "2|cUyuMScLzwDYmpZHI2sPLt8y5p0JHmIyvnI7fWqM6bb6dc2d",
+									"value": "1|reVQgFDRx0ykNmyERyhS0h9Qc9sHMRkNQ8xn9h9b9f0bd327",
 									"type": "string"
 								}
 							]
 						},
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{url}}api/news/categories",
 							"host": [
@@ -382,13 +400,19 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "2|cUyuMScLzwDYmpZHI2sPLt8y5p0JHmIyvnI7fWqM6bb6dc2d",
+									"value": "1|reVQgFDRx0ykNmyERyhS0h9Qc9sHMRkNQ8xn9h9b9f0bd327",
 									"type": "string"
 								}
 							]
 						},
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{url}}api/news/authors",
 							"host": [
@@ -410,13 +434,19 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "2|cUyuMScLzwDYmpZHI2sPLt8y5p0JHmIyvnI7fWqM6bb6dc2d",
+									"value": "1|reVQgFDRx0ykNmyERyhS0h9Qc9sHMRkNQ8xn9h9b9f0bd327",
 									"type": "string"
 								}
 							]
 						},
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{url}}api/news/sources",
 							"host": [
@@ -438,7 +468,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "2|cUyuMScLzwDYmpZHI2sPLt8y5p0JHmIyvnI7fWqM6bb6dc2d",
+									"value": "1|reVQgFDRx0ykNmyERyhS0h9Qc9sHMRkNQ8xn9h9b9f0bd327",
 									"type": "string"
 								}
 							]
@@ -452,13 +482,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}api/user/prefrence",
+							"raw": "{{url}}api/user/preference",
 							"host": [
 								"{{url}}api"
 							],
 							"path": [
 								"user",
-								"prefrence"
+								"preference"
 							]
 						}
 					},
@@ -472,7 +502,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "2|cUyuMScLzwDYmpZHI2sPLt8y5p0JHmIyvnI7fWqM6bb6dc2d",
+									"value": "1|reVQgFDRx0ykNmyERyhS0h9Qc9sHMRkNQ8xn9h9b9f0bd327",
 									"type": "string"
 								}
 							]
@@ -487,7 +517,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"category_id\":1,\n    \"source_id\":7,\n    \"author_id\":32\n\n}",
+							"raw": "{\n\n    \"source_id\":1,\n    \"category_id\":1,\n    \"author_id\":1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -495,13 +525,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}api/user/prefrence",
+							"raw": "{{url}}api/user/preference",
 							"host": [
 								"{{url}}api"
 							],
 							"path": [
 								"user",
-								"prefrence"
+								"preference"
 							]
 						}
 					},
@@ -614,7 +644,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "1|2YMhKgqhXpQNeNBUUegBTI93Qjporsor2Xjtjgb3fa9ae75c",
+							"value": "1|reVQgFDRx0ykNmyERyhS0h9Qc9sHMRkNQ8xn9h9b9f0bd327",
 							"type": "string"
 						}
 					]

@@ -22,11 +22,12 @@ class UserPreferenceController extends Controller
 
     public function store(Request $request)
     {
+
         $validated = $request->validate([
-            'author_id'   => 'nullable|exists:news_authors,id',
-            'source_id'   => 'nullable|exists:news_sources,id',
-            'category_id' => 'nullable|exists:news_categories,id',
-        ]);
+        'author_id'   => 'nullable|exists:news_authors,id',
+        'source_id'   => 'nullable|exists:news_sources,id',
+        'category_id' => 'nullable|exists:news_categories,id',
+    ]);
 
         $mapped = [
             'author_id'   => 'news_author_id',
@@ -34,19 +35,24 @@ class UserPreferenceController extends Controller
             'category_id' => 'news_category_id',
         ];
 
-        // Filter and map input values
+        // Map input values - include null values to clear preferences
         $input = collect($mapped)
-            ->filter(fn ($_, $key) => filled($validated[$key] ?? null))
-            ->mapWithKeys(fn ($newKey, $oldKey) => [$newKey => $validated[$oldKey]])
+            ->filter(fn ($_, $key) => array_key_exists($key, $validated)) // Only include keys that were actually sent
+            ->mapWithKeys(fn ($newKey, $oldKey) => [$newKey => $validated[$oldKey]]) // Include null values
             ->all();
+
+        if(empty($input)  && empty($request->user()->preference)) {
+            return [
+                'data' => []
+            ];
+        }
 
         if (!empty($input)) {
             $user = $request->user();
-
             $user->preference()->updateOrCreate([], $input);
         }
 
-        return new UserPrefrenceResource($request->user()->preference);
+        return new UserPrefrenceResource($request->user()->fresh()->preference);
     }
 
 }

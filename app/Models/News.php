@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class News extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'unique_id', 'title', 'description', 'news_category_id',
         'news_author_id', 'news_source_id', 'provider', 'source_url', 'published_at'
